@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+.motion {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.motion-delay-1 { transition-delay: 100ms; }
+.motion-delay-2 { transition-delay: 200ms; }
+.motion-delay-3 { transition-delay: 300ms; }
+
+.motion-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.motion-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0) translateX(0);
+}
