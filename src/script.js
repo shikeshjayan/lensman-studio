@@ -67,30 +67,48 @@ contactForm.onsubmit = (e) => {
   e.preventDefault();
   const formData = new FormData(contactForm);
   const data = Object.fromEntries(formData);
-  console.log("Form submitted:", data);
-  alert("Thank you! Your message has been sent.");
+  
+  const message = `*New Inquiry from Website*%0A%0A*Name:* ${data.name}%0A*Email:* ${data.email}%0A*Service:* ${data.service}%0A*Message:* ${data.message}`;
+  
+  window.open(`https://wa.me/971558390080?text=${message}`, "_blank");
   contactForm.reset();
 };
 
 const filterBtns = document.querySelectorAll(".filter-btn");
-const galleryImages = document.querySelectorAll(".gallery-img");
+const galleryItems = document.querySelectorAll(".gallery-item");
 
 filterBtns.forEach((btn) => {
   btn.onclick = () => {
     filterBtns.forEach((b) => {
-      b.classList.remove("bg-amber-400", "text-black");
+      b.classList.remove("bg-amber-400", "text-black", "active");
       b.classList.add("bg-neutral-800", "text-white");
     });
     btn.classList.remove("bg-neutral-800", "text-white");
-    btn.classList.add("bg-amber-400", "text-black");
+    btn.classList.add("bg-amber-400", "text-black", "active");
 
     const filter = btn.dataset.filter;
-    galleryImages.forEach((img) => {
-      if (filter === "all" || img.dataset.category === filter) {
-        img.style.display = "block";
-      } else {
-        img.style.display = "none";
-      }
+    
+    galleryItems.forEach((item) => {
+      item.style.opacity = "0";
+      item.style.transform = "scale(0.95)";
     });
+
+    setTimeout(() => {
+      galleryItems.forEach((item) => {
+        const match = filter === "all" || item.dataset.category === filter;
+        item.style.display = match ? "block" : "none";
+        
+        if (match) {
+          setTimeout(() => {
+            item.style.opacity = "1";
+            item.style.transform = "scale(1)";
+          }, 50);
+        }
+      });
+    }, 200);
   };
+});
+
+galleryItems.forEach((item) => {
+  item.style.transition = "opacity 0.3s ease, transform 0.3s ease";
 });
