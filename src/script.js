@@ -77,6 +77,27 @@ contactForm.onsubmit = (e) => {
 const filterBtns = document.querySelectorAll(".filter-btn");
 const galleryItems = document.querySelectorAll(".gallery-item");
 
+function filterGallery(filter) {
+  galleryItems.forEach((item) => {
+    item.style.opacity = "0";
+    item.style.transform = "scale(0.95)";
+  });
+
+  setTimeout(() => {
+    galleryItems.forEach((item) => {
+      const match = item.dataset.category === filter;
+      item.style.display = match ? "block" : "none";
+      
+      if (match) {
+        setTimeout(() => {
+          item.style.opacity = "1";
+          item.style.transform = "scale(1)";
+        }, 50);
+      }
+    });
+  }, 200);
+}
+
 filterBtns.forEach((btn) => {
   btn.onclick = () => {
     filterBtns.forEach((b) => {
@@ -86,29 +107,12 @@ filterBtns.forEach((btn) => {
     btn.classList.remove("bg-neutral-800", "text-white");
     btn.classList.add("bg-amber-400", "text-black", "active");
 
-    const filter = btn.dataset.filter;
-    
-    galleryItems.forEach((item) => {
-      item.style.opacity = "0";
-      item.style.transform = "scale(0.95)";
-    });
-
-    setTimeout(() => {
-      galleryItems.forEach((item) => {
-        const match = filter === "all" || item.dataset.category === filter;
-        item.style.display = match ? "block" : "none";
-        
-        if (match) {
-          setTimeout(() => {
-            item.style.opacity = "1";
-            item.style.transform = "scale(1)";
-          }, 50);
-        }
-      });
-    }, 200);
+    filterGallery(btn.dataset.filter);
   };
 });
 
 galleryItems.forEach((item) => {
   item.style.transition = "opacity 0.3s ease, transform 0.3s ease";
 });
+
+filterGallery("portrait");

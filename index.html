@@ -88,9 +88,7 @@
 
         <!-- Filter buttons for gallery categories -->
         <div role="group" aria-label="Filter portfolio by category" class="flex gap-2 sm:gap-3 mb-6 md:mb-8 overflow-x-auto pb-2 px-2">
-            <button class="filter-btn active px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 bg-amber-400 text-black" aria-pressed="true" data-filter="all">All</button>
-
-            <button class="filter-btn px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 bg-neutral-800 text-white hover:bg-neutral-700" aria-pressed="false" data-filter="portrait">Portraits</button>
+            <button class="filter-btn active px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 bg-amber-400 text-black" aria-pressed="true" data-filter="portrait">Official ID & Passport</button>
 
             <button class="filter-btn px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 bg-neutral-800 text-white hover:bg-neutral-700" aria-pressed="false" data-filter="family">Family</button>
             <button class="filter-btn px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 bg-neutral-800 text-white hover:bg-neutral-700" aria-pressed="false" data-filter="linkedin">LinkedIn</button>
@@ -100,99 +98,90 @@
         <!-- Portfolio image gallery grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="galleryGrid" role="list" aria-label="Portfolio gallery">
 
-            <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="portrait" role="listitem">
-                <img src="public/portrait-1.jpg" alt="Portrait session - natural outdoor lighting"
-                    class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                        <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Portrait</span>
-                        <h3 class="text-white font-semibold mt-1">Natural Light Session</h3>
-                    </div>
-                </div>
-            </div>
+             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="portrait" role="listitem">
+                 <img src="public/portrait-1.jpg" alt="Portrait session - natural outdoor lighting"
+                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                     <div>
+                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Passport</span>
+                     </div>
+                 </div>
+             </div>
 
 
-            <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="portrait" role="listitem">
-                <img src="public/portrait-2.jpg" alt="Portrait - professional headshot"
-                    class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                        <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Portrait</span>
-                        <h3 class="text-white font-semibold mt-1">Studio Portrait</h3>
-                    </div>
-                </div>
-            </div>
+             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="portrait" role="listitem">
+                 <img src="public/portrait-2.jpg" alt="Portrait - professional headshot"
+                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                     <div>
+                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Passport</span>
+                     </div>
+                 </div>
+             </div>
 
-            <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-2" data-category="portrait" role="listitem">
-                <img src="public/portrait-3.jpg" alt="Portrait session - creative composition"
-                    class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                        <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Portrait</span>
-                        <h3 class="text-white font-semibold mt-1">Creative Session</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item rounded overflow-hidden group relative motion" data-category="linkedin" role="listitem">
-                <img src="public/linkedin-1.jpg" alt="LinkedIn headshot - professional business portrait"
-                    class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                        <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">LinkedIn</span>
-                        <h3 class="text-white font-semibold mt-1">Professional Business Headshot</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="linkedin" role="listitem">
-                <img src="public/linkedin-2.jpg" alt="LinkedIn portrait - corporate professional profile"
-                    class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                        <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">LinkedIn</span>
-                        <h3 class="text-white font-semibold mt-1">Corporate Profile Portrait</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item rounded overflow-hidden group relative motion" data-category="cabincrew" role="listitem">
-                <img src="public/cabin-1.jpg" alt="Cabin crew professional portrait"
-                    class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                        <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Cabin Crew</span>
-                        <h3 class="text-white font-semibold mt-1">Aviation Professional Portrait</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="cabincrew" role="listitem">
-                <img src="public/cabin-2.jpg" alt="Cabin crew professional headshot"
-                    class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                        <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Cabin Crew</span>
-                        <h3 class="text-white font-semibold mt-1">Crew Headshot Session</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item rounded overflow-hidden group relative motion" data-category="family" role="listitem">
-                <img src="public/family-1.jpg" alt="Family photography - happy family outdoor session"
-                    class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                        <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Family</span>
-                        <h3 class="text-white font-semibold mt-1">Outdoor Family Session</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="family" role="listitem">
-                <img src="public/family-2.jpg" alt="Family photography - lifestyle family moment"
-                    class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <div>
-                        <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Family</span>
-                        <h3 class="text-white font-semibold mt-1">Lifestyle Moments</h3>
-                    </div>
-                </div>
-            </div>
+             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-2" data-category="portrait" role="listitem">
+                 <img src="public/portrait-3.jpg" alt="Portrait session - creative composition"
+                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                     <div>
+                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Passport</span>
+                     </div>
+                 </div>
+             </div>
+             <div class="gallery-item rounded overflow-hidden group relative motion" data-category="linkedin" role="listitem">
+                 <img src="public/linkedin-1.jpg" alt="LinkedIn headshot - professional business portrait"
+                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                     <div>
+                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">LinkedIn</span>
+                     </div>
+                 </div>
+             </div>
+             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="linkedin" role="listitem">
+                 <img src="public/linkedin-2.jpg" alt="LinkedIn portrait - corporate professional profile"
+                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                     <div>
+                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">LinkedIn</span>
+                     </div>
+                 </div>
+             </div>
+             <div class="gallery-item rounded overflow-hidden group relative motion" data-category="cabincrew" role="listitem">
+                 <img src="public/cabin-1.jpg" alt="Cabin crew professional portrait"
+                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                     <div>
+                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Cabin Crew</span>
+                     </div>
+                 </div>
+             </div>
+             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="cabincrew" role="listitem">
+                 <img src="public/cabin-2.jpg" alt="Cabin crew professional headshot"
+                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                     <div>
+                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Cabin Crew</span>
+                     </div>
+                 </div>
+             </div>
+             <div class="gallery-item rounded overflow-hidden group relative motion" data-category="family" role="listitem">
+                 <img src="public/family-1.jpg" alt="Family photography - happy family outdoor session"
+                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                     <div>
+                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Family</span>
+                     </div>
+                 </div>
+             </div>
+             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="family" role="listitem">
+                 <img src="public/family-2.jpg" alt="Family photography - lifestyle family moment"
+                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                     <div>
+                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Family</span>
+                     </div>
+                 </div>
+             </div>
         </div>
     </section>
 
