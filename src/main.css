@@ -26,3 +26,13 @@
   opacity: 1;
   transform: translateY(0) translateX(0);
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .motion,
+  .motion-left,
+  .motion-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

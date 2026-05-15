@@ -7,13 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="public/camera-32.png" type="image/png">
     <meta name="description" content="Professional photography services - weddings, portraits, and events. Capturing timeless moments." />
-    <title>LensMan - Every moment deserves to be remembered"</title>
+    <title>LensMan - Every moment deserves to be remembered</title>
     
     <!-- External stylesheet for Tailwind CSS -->
     <link rel="stylesheet" href="src/output.css" />
 </head>
 
 <body class="bg-black text-white overflow-x-hidden">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:bg-amber-400 focus:text-black focus:px-4 focus:py-2 focus:rounded focus:outline-none">
+        Skip to main content
+    </a>
 
     <!-- ==========================================
          NAVIGATION BAR
@@ -31,7 +35,7 @@
             <li><a href="#portfolio" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none">Portfolio</a></li>
             <li><a href="#about" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none">About</a></li>
             <li><a href="#contact" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none">Contact</a></li>
-            <li><a href="https://wa.me/971501234567" target="_blank" rel="noopener noreferrer" aria-label="Book now via WhatsApp" class="px-3 lg:px-4 py-2 bg-amber-400 text-black font-semibold rounded hover:bg-amber-300 focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-black text-xs">Book Now</a></li>
+            <li><a href="https://wa.me/971558390080" target="_blank" rel="noopener noreferrer" aria-label="Book now via WhatsApp" class="px-3 lg:px-4 py-2 bg-amber-400 text-black font-semibold rounded hover:bg-amber-300 focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-black text-xs">Book Now</a></li>
         </ul>
 
         <!-- Mobile menu toggle button -->
@@ -48,14 +52,19 @@
         <!-- Mobile navigation links -->
         <nav aria-label="Mobile navigation">
             <ul class="flex flex-col items-center gap-4" role="list">
-                <li><a href="#home" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none py-2" onclick="toggleMenu()">Home</a></li>
-                <li><a href="#portfolio" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none py-2" onclick="toggleMenu()">Portfolio</a></li>
-                <li><a href="#about" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none py-2" onclick="toggleMenu()">About</a></li>
-                <li><a href="#contact" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none py-2" onclick="toggleMenu()">Contact</a></li>
-                <li class="mt-4"><a href="https://wa.me/971558390080" target="_blank" rel="noopener noreferrer" aria-label="Book now via WhatsApp" class="px-8 py-3 bg-amber-400 text-black font-semibold rounded hover:bg-amber-300" onclick="toggleMenu()">Book Now</a></li>
+                <li><a href="#home" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none py-2">Home</a></li>
+                <li><a href="#portfolio" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none py-2">Portfolio</a></li>
+                <li><a href="#about" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none py-2">About</a></li>
+                <li><a href="#contact" class="hover:text-amber-400 focus:text-amber-400 focus:outline-none py-2">Contact</a></li>
+                <li class="mt-4"><a href="https://wa.me/971558390080" target="_blank" rel="noopener noreferrer" aria-label="Book now via WhatsApp" class="px-8 py-3 bg-amber-400 text-black font-semibold rounded hover:bg-amber-300">Book Now</a></li>
             </ul>
         </nav>
     </div>
+
+    <!-- ==========================================
+         MAIN CONTENT
+    ========================================== -->
+    <main id="main-content">
 
     <!-- ==========================================
          HERO SECTION
@@ -81,107 +90,74 @@
 
     <!-- ==========================================
          PORTFOLIO SECTION
-         Filterable gallery of photography work
+         Windows Explorer-style folder gallery
     ========================================== -->
     <section id="portfolio" aria-labelledby="portfolio-heading" class="max-w-6xl mx-auto py-16 md:py-24 px-4 sm:px-6">
         <h2 id="portfolio-heading" class="text-2xl md:text-3xl font-bold mb-8 md:mb-12 motion text-center">Portfolio</h2>
 
-        <!-- Filter buttons for gallery categories -->
-        <div role="group" aria-label="Filter portfolio by category" class="flex gap-2 sm:gap-3 mb-6 md:mb-8 overflow-x-auto pb-2 px-2">
-            <button class="filter-btn active px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 bg-amber-400 text-black" aria-pressed="true" data-filter="portrait">Official ID & Passport</button>
+        <div id="portfolioExplorer">
 
-            <button class="filter-btn px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 bg-neutral-800 text-white hover:bg-neutral-700" aria-pressed="false" data-filter="family">Family</button>
-            <button class="filter-btn px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 bg-neutral-800 text-white hover:bg-neutral-700" aria-pressed="false" data-filter="linkedin">LinkedIn</button>
-            <button class="filter-btn px-4 py-2 rounded-full font-medium text-sm whitespace-nowrap transition-all duration-300 bg-neutral-800 text-white hover:bg-neutral-700" aria-pressed="false" data-filter="cabincrew">Cabin Crew</button>
-        </div>
+            <!-- Folder view -->
+            <div id="folderView">
+                <div class="flex justify-center gap-6 sm:gap-8" id="folderGrid" role="list" aria-label="Portfolio categories">
+                    <div class="folder-card flex flex-col items-center gap-1 cursor-pointer group" data-folder="official-passport" role="listitem" tabindex="0">
+                        <div class="w-12 h-10 sm:w-14 sm:h-12 text-amber-400/80 group-hover:text-amber-400 group-hover:scale-110 transition-all duration-200">
+                            <svg viewBox="0 0 48 48" fill="currentColor" class="w-full h-full">
+                                <path d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+                                <path d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v2h40v-2c0-2.2-1.8-4-4-4z" fill="currentColor" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs text-gray-300 group-hover:text-white text-center leading-tight">Official &amp; Passport</span>
+                        <span class="text-[10px] text-gray-500">3 items</span>
+                    </div>
 
-        <!-- Portfolio image gallery grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="galleryGrid" role="list" aria-label="Portfolio gallery">
+                    <div class="folder-card flex flex-col items-center gap-1 cursor-pointer group" data-folder="family" role="listitem" tabindex="0">
+                        <div class="w-12 h-10 sm:w-14 sm:h-12 text-amber-400/80 group-hover:text-amber-400 group-hover:scale-110 transition-all duration-200">
+                            <svg viewBox="0 0 48 48" fill="currentColor" class="w-full h-full">
+                                <path d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+                                <path d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v2h40v-2c0-2.2-1.8-4-4-4z" fill="currentColor" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs text-gray-300 group-hover:text-white text-center leading-tight">Family</span>
+                        <span class="text-[10px] text-gray-500">2 items</span>
+                    </div>
 
-             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="portrait" role="listitem">
-                 <img src="public/portrait-1.jpg" alt="Portrait session - natural outdoor lighting"
-                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                     <div>
-                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Passport</span>
-                     </div>
-                 </div>
-             </div>
+                    <div class="folder-card flex flex-col items-center gap-1 cursor-pointer group" data-folder="linkedin" role="listitem" tabindex="0">
+                        <div class="w-12 h-10 sm:w-14 sm:h-12 text-amber-400/80 group-hover:text-amber-400 group-hover:scale-110 transition-all duration-200">
+                            <svg viewBox="0 0 48 48" fill="currentColor" class="w-full h-full">
+                                <path d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+                                <path d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v2h40v-2c0-2.2-1.8-4-4-4z" fill="currentColor" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs text-gray-300 group-hover:text-white text-center leading-tight">LinkedIn</span>
+                        <span class="text-[10px] text-gray-500">2 items</span>
+                    </div>
 
+                    <div class="folder-card flex flex-col items-center gap-1 cursor-pointer group" data-folder="cabin-crew" role="listitem" tabindex="0">
+                        <div class="w-12 h-10 sm:w-14 sm:h-12 text-amber-400/80 group-hover:text-amber-400 group-hover:scale-110 transition-all duration-200">
+                            <svg viewBox="0 0 48 48" fill="currentColor" class="w-full h-full">
+                                <path d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v24c0 2.2 1.8 4 4 4h32c2.2 0 4-1.8 4-4V16c0-2.2-1.8-4-4-4z"/>
+                                <path d="M40 12H22l-4-4H8c-2.2 0-4 1.8-4 4v2h40v-2c0-2.2-1.8-4-4-4z" fill="currentColor" opacity="0.3"/>
+                            </svg>
+                        </div>
+                        <span class="text-xs text-gray-300 group-hover:text-white text-center leading-tight">Cabin Crew</span>
+                        <span class="text-[10px] text-gray-500">2 items</span>
+                    </div>
+                </div>
+            </div>
 
-             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="portrait" role="listitem">
-                 <img src="public/portrait-2.jpg" alt="Portrait - professional headshot"
-                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                     <div>
-                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Passport</span>
-                     </div>
-                 </div>
-             </div>
+            <!-- Image view (hidden by default) -->
+            <div id="imageView" class="hidden">
+                <div class="flex items-center gap-3 mb-6 flex-wrap">
+                    <button id="backBtn" class="flex items-center gap-1.5 px-3 py-1.5 text-sm text-gray-400 hover:text-white bg-neutral-800 hover:bg-neutral-700 rounded transition-colors cursor-pointer">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 12H5m7-7-7 7 7 7"/></svg>
+                        Back
+                    </button>
+                    <span id="folderPath" class="text-sm text-gray-400">Portfolio / <span class="text-white"></span></span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6" id="imageGrid" role="list" aria-label="Category images"></div>
+            </div>
 
-             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-2" data-category="portrait" role="listitem">
-                 <img src="public/portrait-3.jpg" alt="Portrait session - creative composition"
-                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                     <div>
-                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Passport</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="gallery-item rounded overflow-hidden group relative motion" data-category="linkedin" role="listitem">
-                 <img src="public/linkedin-1.jpg" alt="LinkedIn headshot - professional business portrait"
-                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                     <div>
-                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">LinkedIn</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="linkedin" role="listitem">
-                 <img src="public/linkedin-2.jpg" alt="LinkedIn portrait - corporate professional profile"
-                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                     <div>
-                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">LinkedIn</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="gallery-item rounded overflow-hidden group relative motion" data-category="cabincrew" role="listitem">
-                 <img src="public/cabin-1.jpg" alt="Cabin crew professional portrait"
-                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                     <div>
-                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Cabin Crew</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="cabincrew" role="listitem">
-                 <img src="public/cabin-2.jpg" alt="Cabin crew professional headshot"
-                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                     <div>
-                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Cabin Crew</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="gallery-item rounded overflow-hidden group relative motion" data-category="family" role="listitem">
-                 <img src="public/family-1.jpg" alt="Family photography - happy family outdoor session"
-                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                     <div>
-                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Family</span>
-                     </div>
-                 </div>
-             </div>
-             <div class="gallery-item rounded overflow-hidden group relative motion motion-delay-1" data-category="family" role="listitem">
-                 <img src="public/family-2.jpg" alt="Family photography - lifestyle family moment"
-                     class="gallery-img cursor-pointer object-cover w-full rounded transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-                 <div class="gallery-overlay absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                     <div>
-                         <span class="text-xs font-medium text-amber-400 uppercase tracking-wide">Family</span>
-                     </div>
-                 </div>
-             </div>
         </div>
     </section>
 
@@ -248,6 +224,7 @@
                     </p>
                     
                     <!-- Contact details list -->
+                    <address class="not-italic">
                     <ul class="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base mt-6" role="list">
                         <li class="flex items-center gap-3">
                             <svg aria-hidden="true" class="w-5 h-5 text-amber-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -262,6 +239,7 @@
                             <a href="tel:+971558390080" class="hover:text-amber-400">+971 55 83 900 80</a>
                         </li>
                     </ul>
+                    </address>
 
                     <!-- Social media links -->
                     <div class="mt-6 flex gap-4" aria-label="Social media links">
@@ -282,7 +260,8 @@
                             loading="lazy" 
                             referrerpolicy="no-referrer-when-downgrade"
                             title="LensMan studio location in Al Jerf 3, Ajman on Google Maps"
-                            allowfullscreen>
+                            allowfullscreen
+                            sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox">
                         </iframe>
                     </div>
                 </div>
@@ -314,10 +293,13 @@
                     <button type="submit" class="w-full sm:w-auto px-5 sm:px-6 py-2.5 sm:py-3 bg-amber-400 text-black font-semibold rounded hover:bg-amber-300 focus:ring-2 focus:ring-amber-400 focus:ring-offset-2 focus:ring-offset-black text-sm sm:text-base">
                         Send Message
                     </button>
+                    <div id="formStatus" class="text-sm hidden" role="alert"></div>
                 </form>
             </div>
         </div>
     </section>
+
+    </main>
 
     <!-- ==========================================
          FOOTER
